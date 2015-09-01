@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.khpj.model.AppraisalReport" table="appraisal_report">
+
+		<id name="appraisalReportId" type="java.lang.String" column="appraisal_report_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<many-to-one name="department" class="cn.jxust.base.model.Department" column="department_id">
+		</many-to-one>
+		
+		<property name="name" type="java.lang.String"
+			column="name" length="50">
+		</property>
+
+		<property name="duty" type="java.lang.String" column="duty" length="20">
+		</property>
+		
+		<property name="selfAssessment" type="java.lang.String"
+			column="self_assessment" length="20">
+		</property>
+		
+		<property name="selfAssessmentTime" type="java.lang.String" column="self_assessmentTime"
+			length="50">
+		</property>
+
+		<property name="opinion" type="java.lang.String" column="opinion"
+			length="50">
+		</property>
+
+		<property name="opinionTime" type="java.lang.String" column="opinion_time"
+			length="50">
+		</property>
+
+		<property name="createDate" type="java.lang.String" column="create_date"
+			length="50">
+		</property>
+
+	</class>
+</hibernate-mapping>
+
+
+

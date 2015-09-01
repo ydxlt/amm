@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.khpj.model.AuditScore" table="khpj_audit_score">
+
+		<id name="auditScoreId" type="java.lang.String" column="audit_score_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<property name="scoreValue" type="java.lang.Double" column="audit_score_value"
+			length="5">
+		</property>
+
+		<property name="scoreYear" type="java.lang.String" column="audit_score_year"
+			length="15">
+		</property>
+
+		<many-to-one name="department" column="department_id"
+			class="cn.jxust.base.model.Department" cascade="delete" not-null="true" />
+
+		<property name="auditor" type="java.lang.String" column="auditor"
+			length="50">
+		</property>
+
+		<property name="scoreType" type="java.lang.String" column="audit_score_type"
+			length="200">
+		</property>
+
+		<property name="auditStat" type="java.lang.String" column="audit_stat"
+			length="10">
+		</property>
+
+		<property name="refuseInfo" type="java.lang.String" column="refuse_info"
+			length="400">
+		</property>
+		
+		<property name="publishFlag" type="java.lang.String" column="publish_flag"
+			length="2">
+		</property>
+
+	</class>
+</hibernate-mapping>
+
+
+

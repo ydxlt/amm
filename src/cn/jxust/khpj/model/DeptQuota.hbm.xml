@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.khpj.model.DeptQuota" table="base_department_quota">
+
+		<id name="deptQuotaId" type="java.lang.String" column="department_quota_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<property name="deptType" type="java.lang.String"
+			column="department_type" length="2">
+		</property>
+		
+		<property name="inused" type="java.lang.Integer"
+			column="in_used" length="2">
+		</property>
+
+		<many-to-one name="quota" column="quota_id"
+			class="cn.jxust.khpj.model.Quota" cascade="delete" not-null="true" />
+	</class>
+</hibernate-mapping>
+
+
+

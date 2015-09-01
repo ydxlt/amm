@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.khpj.model.CDReport" table="cd_report">
+
+		<id name="cDReportId" type="java.lang.String" column="cd_report_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<many-to-one name="department" class="cn.jxust.base.model.Department" column="department_id" >
+		</many-to-one>
+		
+		<property name="reportDate" type="java.lang.String" column="report_date" length="20"></property>
+		
+		<property name="conDisClass" type="java.lang.Integer" column="cd_class" length="3"></property>
+
+		<property name="countyCount" type="java.lang.Integer" column="cou_count" length="20">
+		</property>
+		
+		<property name="townCount" type="java.lang.Integer" column="town_count" length="2">
+		</property>
+		
+		<property name="villageCount" type="java.lang.Integer" column="vil_count" length="2">
+		</property>
+		
+		<property name="couDisCount" type="java.lang.Integer" column="cou_dis_cnt"
+			length="5">
+		</property>
+
+		<property name="townDisCount" type="java.lang.Integer" column="town_dis_cnt"
+			length="5">
+		</property>
+
+		<property name="vilDisCount" type="java.lang.Integer" column="vil_dis_cnt"
+			length="5">
+		</property>
+
+		<property name="informant" type="java.lang.String" column="informant"
+			length="50">
+		</property>
+
+		<property name="audit" type="java.lang.String" column="auditor"
+			length="50">
+		</property>
+
+		<property name="timeFillReport" type="java.lang.String" column="tf_report"
+			length="50">
+		</property>
+
+	</class>
+</hibernate-mapping>
+
+
+

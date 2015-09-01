@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.jxust.sms.model.SMS" table="short_message">
+
+		<id column="id" name="id" type="java.lang.Integer" unsaved-value="0">
+			<generator class="identity"></generator>
+		</id>
+
+		<property name="phonoNumbers" type="java.lang.String">
+			<column name="phonoNumbers" unique="true"></column>
+		</property>
+
+		<property column="content" name="content"
+			type="java.lang.String">
+		</property>
+		
+		<!-- 映射设备到短信的一对一 双向关联-->
+		<one-to-one name="device" class="cn.jxust.device.model.Device" 
+			cascade="all" property-ref="sms"></one-to-one>
+	</class>
+</hibernate-mapping>

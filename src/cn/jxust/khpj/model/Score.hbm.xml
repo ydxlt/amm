@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.khpj.model.Score" table="khpj_score">
+
+		<id name="scoreId" type="java.lang.String" column="score_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<property name="scoreValue" type="java.lang.Double" column="score_value"
+			length="5">
+		</property>
+
+		<property name="scoreMonth" type="java.lang.String" column="score_month"
+			length="15">
+		</property>
+
+		<many-to-one name="department" column="department_id"
+			class="cn.jxust.base.model.Department" cascade="delete" not-null="true" />
+
+		<many-to-one name="quota" column="quota_id"
+			class="cn.jxust.khpj.model.Quota" cascade="delete" not-null="true" />
+
+		<property name="auditStat" type="java.lang.String" column="audit_stat"
+			length="10">
+		</property>
+
+		<property name="auditDate" type="java.lang.String" column="audit_date"
+			length="20">
+		</property>
+
+		<property name="modifyDate" type="java.lang.String" column="modify_date"
+			length="15">
+		</property>
+
+		<property name="auditor" type="java.lang.String" column="auditor"
+			length="50">
+		</property>
+
+		<property name="refuseInfo" type="java.lang.String" column="refuse_info"
+			length="400">
+		</property>
+
+		<property name="publishFlag" type="java.lang.String" column="publish_flag"
+			length="2">
+		</property>
+
+	</class>
+</hibernate-mapping>
+
+
+

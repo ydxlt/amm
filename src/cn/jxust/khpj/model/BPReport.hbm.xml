@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.khpj.model.BPReport" table="bp_report">
+
+		<id name="bPReportId" type="java.lang.String" column="bp_report_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<many-to-one name="department" class="cn.jxust.base.model.Department" column="department_id" >
+		</many-to-one>
+		
+		<property name="name" type="java.lang.String"
+			column="name" length="50">
+		</property>
+
+		<property name="duty" type="java.lang.String" column="duty" length="20">
+		</property>
+		
+		<property name="mainAffair" type="java.lang.String"
+			column="main_affair" length="2000">
+		</property>
+		
+		<property name="bonusOrPenalty" type="java.lang.String" column="bonus_or_penalty"
+			length="50">
+		</property>
+		
+		<property name="type" type="java.lang.String"
+			column="type" length="1">
+		</property>
+		<property name="createDate" type="java.lang.String"
+			column="create_date" length="20">
+		</property>
+	</class>
+</hibernate-mapping>
+
+
+

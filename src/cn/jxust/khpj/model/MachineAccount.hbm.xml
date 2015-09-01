@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.khpj.model.MachineAccount" table="machine_account">
+
+		<id name="machineAccountId" type="java.lang.String" column="machine_account_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<many-to-one name="department" class="cn.jxust.base.model.Department" column="department_id">
+		</many-to-one>
+		
+		<property name="cdDescription" type="java.lang.String"
+			column="cd_description" length="1000">
+		</property>
+
+		<property name="reportDate" type="java.lang.String" column="report_date" length="20"></property>
+		
+		<property name="dutyPerson" type="java.lang.String" column="duty_person" length="20">
+		</property>
+		
+		<property name="resoleTime" type="java.lang.String"
+			column="resole_time" length="20">
+		</property>
+		
+		<property name="resoleDescription" type="java.lang.String" column="resole_description"
+			length="500">
+		</property>
+
+		<property name="supervision" type="java.lang.String" column="supervision"
+			length="350">
+		</property>
+
+		<property name="xiaoHao" type="java.lang.String" column="xiao_hao"
+			length="350">
+		</property>
+
+	</class>
+</hibernate-mapping>
+
+
+

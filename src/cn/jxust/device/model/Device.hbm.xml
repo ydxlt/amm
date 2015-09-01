@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.jxust.device.model.Device" table="device">
+		<id name="id" column="id">
+			<generator class="foreign">
+				<param name="property">sms</param>
+			</generator>
+		</id>
+
+		<property name="deviceId" type="java.lang.String">
+			<column name="deviceId" />
+		</property>
+		
+		<property name="deviceName" type="java.lang.String">
+			<column name="deviceName" length="80" />
+		</property>
+
+		<!-- 映射device到sms的一对一单向关联 -->
+		<many-to-one name="sms" unique="true" column="sms_id" cascade="all"></many-to-one>
+		
+	</class>
+</hibernate-mapping>

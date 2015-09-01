@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.base.model.Department" table="base_department">
+
+		<id name="departmentId" type="java.lang.String" column="department_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<property name="departmentName" type="java.lang.String"
+			column="department_name" length="50">
+		</property>
+
+		<property name="departmentDesc" type="java.lang.String"
+			column="department_desc" length="150">
+		</property>
+
+		<property name="departmentType" type="java.lang.String"
+			column="department_type" length="10">
+		</property>
+
+		<property name="ordNum" type="java.lang.Integer" column="order_number"
+			length="7">
+		</property>
+		
+		<property name="totalScore" type="java.lang.Double" column="total_score"
+			length="7">
+		</property>
+		<property name="lastMonthScore" type="java.lang.Double" column="last_month_score"
+			length="7">
+		</property>
+
+		<property name="transFixedQuota" type="java.lang.String"
+			column="trans_fixedQuota" length="2">
+		</property>
+		
+		<property name="transFixedQuotaTemplate" type="java.lang.String"
+			column="trans_fixedQuota_template" length="5000">
+		</property>
+		
+		<property name="speciallyWork" type="java.lang.String"
+			column="specially_work" length="2">
+		</property>
+	</class>
+</hibernate-mapping>
+
+
+

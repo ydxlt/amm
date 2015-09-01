@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.jxust.khpj.model.Quota" table="khpj_quota">
+
+		<id name="quotaId" type="java.lang.String" column="quota_id">
+			<generator class="uuid.hex" />
+		</id>
+
+		<property name="quotaName" type="java.lang.String" column="quota_name"
+			length="50">
+		</property>
+
+		<property name="quotaScore" type="java.lang.Double" column="quota_score"
+			length="50">
+		</property>
+
+		<property name="quotaDesc" type="java.lang.String" column="quota_desc"
+			length="150">
+		</property>
+
+		<property name="quotaType" type="java.lang.String" column="quota_type"
+			length="50">
+		</property>
+
+	</class>
+</hibernate-mapping>
+
+
+
